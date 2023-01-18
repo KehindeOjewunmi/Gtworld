@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Acada Learning Releases Nexus Repository</name>
-	      <url>http://172.31.47.112:6060/repository/freeproG1-release/</url>
+	      <url>http://172.31.47.112:6060/repository/pipeproG1-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url>http://172.31.47.112:6060/repository/freeproG1-snapshot/</url>
+	      <url>http://172.31.47.112:6060/repository/pipeproG1-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
