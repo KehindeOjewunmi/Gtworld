@@ -34,7 +34,7 @@ pipeline{
         stage("E.Deploy to UAT"){
       steps{
         sh "echo deploying to UAT environment"
-       deploy adapters: [tomcat9(credentialsId: 'Tomcat-Cred', path: '', url: 'http://35.92.39.228:5050/')], contextPath: null, war: 'target/*.war'
+       deploy adapters: [tomcat9(credentialsId: 'Tomcat-Cred', path: '', url: 'http://35.92.138.225:5050/')], contextPath: null, war: 'target/*.war'
       }
     }
     stage("F.Approval"){
@@ -48,7 +48,7 @@ pipeline{
     stage("G.Deploy_Prod"){
       steps{
         sh "echo This stage deploy artifact to production environment"
-        deploy adapters: [tomcat9(credentialsId: 'Tomcat-Cred', path: '', url: 'http://35.92.39.228:5050/')], contextPath: null, war: 'target/*.war'
+        deploy adapters: [tomcat9(credentialsId: 'Tomcat-Cred', path: '', url: 'http://35.92.138.225:5050/')], contextPath: null, war: 'target/*.war'
       }
     }
     stage("H.SlackAlert"){
