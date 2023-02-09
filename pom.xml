@@ -96,7 +96,7 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>gtpayproject</name>
+	      <name>gtpayproject-release</name>
 	      <url>http://172.31.0.158:4000/nexus/content/repositories/gtpay-release/</url>
 	    </repository>
 	    
