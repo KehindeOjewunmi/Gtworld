@@ -96,14 +96,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Acada Learning Releases Nexus Repository</name>
-	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
+	      <name>gtpayproject</name>
+	      <url>http://172.31.0.158:4000/nexus/content/repositories/gtpay-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
+	      <name>gtpayproject-snapshot</name>
+	      <url>http://172.31.0.158:4000/nexus/content/repositories/gtpay-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
