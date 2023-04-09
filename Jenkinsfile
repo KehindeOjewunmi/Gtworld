@@ -29,15 +29,15 @@ pipeline{
         sh "mvn sonar:sonar"
       }
     }
-    stage("D.ArtifactBackup"){
-      steps{
-        sh "echo performing artifact back up to nexus"
-        sh "mvn deploy"
-      }
+    // stage("D.ArtifactBackup"){
+    //   steps{
+    //     sh "echo performing artifact back up to nexus"
+    //     sh "mvn deploy"
+    //   }
     }
     stage('Build Docker Image'){
       steps{
-            sh 'docker build -t kehindeojewunmi/kubernetes .'
+            sh 'docker build -t kehindeojewunmi/naitdemo .'
             }
         }
     stage('Push Image'){

@@ -12,8 +12,8 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Acada Learning</name>
-		<url>http://acadalearning.com/</url>
+		<name>NAIT Learning</name>
+		<url>http://nait.com/</url>
 	</organization>
 
 	<properties>
@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.13.189:600/</sonar.host.url>
+		<sonar.host.url>http://34.211.112.136:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin123</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,14 +96,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Acada Learning Releases Nexus Repository</name>
-	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
+	      <name>NAIT Releases Nexus Repository</name>
+	      <url>http://18.237.136.227:8081/nexus/content/repositories/nexus</url>
 	    </repository>
 	    
 	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
+	      <id>nexus2</id>
+	      <name>NAIT Snapshot Nexus Repository</name>
+	      <url>http://18.237.136.227:8081/nexus/content/repositories/nexus2</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
