@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>1.2.1-RELEASE</version>
+	<version>1.2.1-SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
 
@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.0.158:3000/</sonar.host.url>
+		<sonar.host.url>http://172.31.13.189:600/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin123</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,14 +96,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>gtpayproject-release</name>
-	      <url>http://172.31.0.158:4000/nexus/content/repositories/gtpay-release/</url>
+	      <name>Acada Learning Releases Nexus Repository</name>
+	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>gtpayproject-snapshot</name>
-	      <url>http://172.31.0.158:4000/nexus/content/repositories/gtpay-snapshot/</url>
+	      <name>Acada Learning Snapshot Nexus Repository</name>
+	      <url>http://172.31.13.189:700/nexus/content/repositories/nexus</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>

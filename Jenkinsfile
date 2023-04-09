@@ -1,54 +1,57 @@
-node
- {
-  
-  def mavenHome = tool name: "maven3.6.2"
-  
-      echo "GitHub BranhName ${env.BRANCH_NAME}"
-      echo "Jenkins Job Number ${env.BUILD_NUMBER}"
-      echo "Jenkins Node Name ${env.NODE_NAME}"
-  
-      echo "Jenkins Home ${env.JENKINS_HOME}"
-      echo "Jenkins URL ${env.JENKINS_URL}"
-      echo "JOB Name ${env.JOB_NAME}"
-  
-   properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
-  
-  stage("CheckOutCodeGit")
-  {
-   git branch: 'development', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/team16flight/web-app.git'
- }
- 
- stage("Build")
- {
- sh "${mavenHome}/bin/mvn clean package"
- }
- 
-  /*
- stage("ExecuteSonarQubeReport")
- {
- sh "${mavenHome}/bin/mvn sonar:sonar"
- }
- 
- stage("UploadArtifactsintoNexus")
- {
- sh "${mavenHome}/bin/mvn deploy"
- }
- 
-  stage("DeployAppTomcat")
- {
-  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
-  }
- }
- 
- stage('EmailNotification')
- {
- mail bcc: 'info@acadalearning.com', body: '''Build is over
+//Building Declarative pipeline via standalone static library code file saved in app specific git repository 
 
- Thanks,
- Acada Learning,
- 9980923226.''', cc: 'info@acadalearning.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'info@acadalearning.com'
- }
- */
- 
- }
+pipeline{
+  agent any
+  environment {
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_DEFAULT_REGION = "us-west-2"
+  }
+  tools{
+    maven "maven3.8.7"
+  }
+  stages{
+    stage("A.CodeClone"){
+      steps{
+        sh "echo This stage performs git clone action"
+        git credentialsId: 'Github-Cred', url: 'https://github.com/KehindeOjewunmi/Gtworld-app.git'
+      }
+    }
+    stage("B.Buildcode"){
+      steps{
+        sh "echo code is being built"
+        sh "mvn clean package"
+      }
+    }
+    stage("C.CodeCheck"){
+      steps{
+        sh "echo codequality is being checked"
+        sh "mvn sonar:sonar"
+      }
+    }
+    stage("D.ArtifactBackup"){
+      steps{
+        sh "echo performing artifact back up to nexus"
+        sh "mvn deploy"
+      }
+    }
+    stage('Build Docker Image'){
+      steps{
+            sh 'docker build -t kehindeojewunmi/kubernetes .'
+            }
+        }
+    stage('Push Image'){
+      steps{
+            sh 'docker login -u kehindeojewunmi -p dckr_pat_JK_ZP5z1Kk4DnGvBKgME68J3CGA'
+                
+            sh 'docker push kehindeojewunmi/kubernetes'
+            }
+        }
+    stage("Deploy to EKS") {
+      steps {
+            sh "aws eks update-kubeconfig --name demo-cluster"
+            sh "kubectl apply -f deploymentservice.yaml"
+            }
+        }
+}
+}
