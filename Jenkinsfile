@@ -34,7 +34,7 @@ pipeline{
     //     sh "echo performing artifact back up to nexus"
     //     sh "mvn deploy"
     //   }
-    }
+    // }
     stage('Build Docker Image'){
       steps{
             sh 'docker build -t kehindeojewunmi/naitdemo .'
@@ -42,9 +42,9 @@ pipeline{
         }
     stage('Push Image'){
       steps{
-            sh 'docker login -u kehindeojewunmi -p dckr_pat_JK_ZP5z1Kk4DnGvBKgME68J3CGA'
+            sh 'docker login -u kehindeojewunmi -p dckr_pat_tvQq3rU_Rok_lJvRwM9LH6805PQ'
                 
-            sh 'docker push kehindeojewunmi/kubernetes'
+            sh 'docker push kehindeojewunmi/naitdemo'
             }
         }
     stage("Deploy to EKS") {
