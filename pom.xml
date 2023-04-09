@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>NAIT Releases Nexus Repository</name>
-	      <url>http://18.237.136.227:8081/nexus/content/repositories/nexus</url>
+	      <url>http://52.88.103.153:8081/nexus/content/repositories/nexus</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus2</id>
 	      <name>NAIT Snapshot Nexus Repository</name>
-	      <url>http://18.237.136.227:8081/nexus/content/repositories/nexus2</url>
+	      <url>http://52.88.103.153:8081/nexus/content/repositories/nexus2</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
