@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>perfectchoicesolution.com- Home Page</title>
-<link href="images/DP black.png" rel="icon">
+<title>nait.com- Home Page</title>
+<link href="images/nait11.png" rel="icon">
 </head>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/DP black.png" alt="" width="100">
+		<img src="images/nait11.png" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		Mailing Address:
@@ -24,7 +24,7 @@
 		Edmonton, AB, Canada, T5G 2R1
 		780.471.7834
 		<br>
-		<a href="mailto:info@nait.com">Mail to ACADA Learning</a>
+		<a href="mailto:info@nait.com">Mail to NAIT Learning</a>
 	</span>
 </div>
 <hr>
