@@ -11,6 +11,16 @@ pipeline{
     maven "maven3.8.7"
   }
   stages{
+    stage("Create an EKS Cluster") {
+            steps {
+                script {
+                    dir('terraform') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
     stage("A.CodeClone"){
       steps{
         sh "echo This stage performs git clone action"
@@ -49,9 +59,11 @@ pipeline{
         }
     stage("Deploy to EKS") {
       steps {
-            sh "aws eks update-kubeconfig --name demo-cluster"
-            sh "kubectl apply -f deploymentservice.yaml"
+        script {
+              sh "aws eks update-kubeconfig --name demo-cluster"
+              sh "kubectl apply -f deploymentservice.yaml"
             }
         }
+}
 }
 }
