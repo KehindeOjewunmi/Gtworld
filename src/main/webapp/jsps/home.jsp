@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>perfectchoicesolution.com- Home Page</title>
+<title>nait.com- Home Page</title>
 <link href="images/DP black.png" rel="icon">
 </head>
 </head>
@@ -24,7 +24,7 @@
 		Edmonton, AB, Canada, T5G 2R1
 		780.471.7834
 		<br>
-		<a href="mailto:info@nait.com">Mail to ACADA Learning</a>
+		<a href="mailto:info@nait.com">Mail to NAIT Learning</a>
 	</span>
 </div>
 <hr>
