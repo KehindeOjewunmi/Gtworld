@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>nait.com- Home Page</title>
-<link href="images/DP black.png" rel="icon">
+<link href="images/nait11.png" rel="icon">
 </head>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/DP black.png" alt="" width="100">
+		<img src="images/nait11.png" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		Mailing Address:
