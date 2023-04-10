@@ -11,18 +11,18 @@ pipeline{
     maven "maven3.8.7"
   }
   stages{
-    // stage("Create an EKS Cluster") {
-    //         steps {
-    //             script {
-    //                 dir('terraform') {
-    //                     sh "terraform init"
-    //                     sh "terraform destroy -auto-approve"
-    //                     sh "terraform init"
-    //                     sh "terraform apply -auto-approve"
-    //                 }
-    //             }
-    //         }
-        // }
+    stage("Create an EKS Cluster") {
+            steps {
+                script {
+                    dir('terraform') {
+                        // sh "terraform init"
+                        sh "terraform destroy -auto-approve"
+                        // sh "terraform init"
+                        // sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
     // stage("A.CodeClone"){
     //   steps{
     //     sh "echo This stage performs git clone action"
@@ -59,14 +59,14 @@ pipeline{
     //         sh 'docker push kehindeojewunmi/naitdemo'
     //         }
     //     }
-    stage("Deploy to EKS") {
-      steps {
-        script {
-              sh "aws eks update-kubeconfig --name demo-cluster"
-              // sh "kubectl delete deploymentservice.yaml"
-              sh "kubectl apply -f deploymentservice.yaml"
-            }
-        }
-}
+    // stage("Deploy to EKS") {
+    //   steps {
+    //     script {
+    //           sh "aws eks update-kubeconfig --name demo-cluster"
+    //           // sh "kubectl delete deploymentservice.yaml"
+    //           sh "kubectl apply -f deploymentservice.yaml"
+    //         }
+    //     }
+// }
 }
 }
