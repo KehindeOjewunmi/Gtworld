@@ -23,42 +23,42 @@ pipeline{
     //             }
     //         }
         // }
-    stage("A.CodeClone"){
-      steps{
-        sh "echo This stage performs git clone action"
-        git credentialsId: 'Github-Cred', url: 'https://github.com/KehindeOjewunmi/Gtworld-app.git'
-      }
-    }
-    stage("B.Buildcode"){
-      steps{
-        sh "echo code is being built"
-        sh "mvn clean package"
-      }
-    }
-    stage("C.CodeCheck"){
-      steps{
-        sh "echo codequality is being checked"
-        sh "mvn sonar:sonar"
-      }
-    }
-    // stage("D.ArtifactBackup"){
+    // stage("A.CodeClone"){
     //   steps{
-    //     sh "echo performing artifact back up to nexus"
-    //     sh "mvn deploy"
+    //     sh "echo This stage performs git clone action"
+    //     git credentialsId: 'Github-Cred', url: 'https://github.com/KehindeOjewunmi/Gtworld-app.git'
     //   }
     // }
-    stage('Build Docker Image'){
-      steps{
-            sh 'docker build -t kehindeojewunmi/naitdemo .'
-            }
-        }
-    stage('Push Image'){
-      steps{
-            sh 'docker login -u kehindeojewunmi -p dckr_pat_tvQq3rU_Rok_lJvRwM9LH6805PQ'
+    // stage("B.Buildcode"){
+    //   steps{
+    //     sh "echo code is being built"
+    //     sh "mvn clean package"
+    //   }
+    // }
+    // stage("C.CodeCheck"){
+    //   steps{
+    //     sh "echo codequality is being checked"
+    //     sh "mvn sonar:sonar"
+    //   }
+    // }
+    // // stage("D.ArtifactBackup"){
+    // //   steps{
+    // //     sh "echo performing artifact back up to nexus"
+    // //     sh "mvn deploy"
+    // //   }
+    // // }
+    // stage('Build Docker Image'){
+    //   steps{
+    //         sh 'docker build -t kehindeojewunmi/naitdemo .'
+    //         }
+    //     }
+    // stage('Push Image'){
+    //   steps{
+    //         sh 'docker login -u kehindeojewunmi -p dckr_pat_tvQq3rU_Rok_lJvRwM9LH6805PQ'
                 
-            sh 'docker push kehindeojewunmi/naitdemo'
-            }
-        }
+    //         sh 'docker push kehindeojewunmi/naitdemo'
+    //         }
+    //     }
     stage("Deploy to EKS") {
       steps {
         script {
