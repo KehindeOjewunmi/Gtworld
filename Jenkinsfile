@@ -63,7 +63,7 @@ pipeline{
       steps {
         script {
               sh "aws eks update-kubeconfig --name demo-cluster"
-              sh "kubectl delete deploymentservice.yaml"
+              // sh "kubectl delete deploymentservice.yaml"
               sh "kubectl apply -f deploymentservice.yaml"
             }
         }
