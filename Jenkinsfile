@@ -29,12 +29,12 @@ pipeline{
         git credentialsId: 'Github-Cred', url: 'https://github.com/KehindeOjewunmi/Gtworld-app.git'
       }
     }
-    stage("B.Buildcode"){
-      steps{
-        sh "echo code is being built"
-        sh "mvn clean package"
-      }
-    }
+    // stage("B.Buildcode"){
+    //   steps{
+    //     sh "echo code is being built"
+    //     sh "mvn clean package"
+    //   }
+    // }
     // stage("C.CodeCheck"){
     //   steps{
     //     sh "echo codequality is being checked"
