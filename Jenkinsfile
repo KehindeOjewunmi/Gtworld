@@ -22,7 +22,7 @@ pipeline{
     //                 }
     //             }
     //         }
-        }
+        // }
     stage("A.CodeClone"){
       steps{
         sh "echo This stage performs git clone action"
