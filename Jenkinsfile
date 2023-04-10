@@ -11,17 +11,17 @@ pipeline{
     maven "maven3.8.7"
   }
   stages{
-    stage("Create an EKS Cluster") {
-            steps {
-                script {
-                    dir('terraform') {
-                        sh "terraform init"
-                        sh "terraform destroy -auto-approve"
-                        sh "terraform init"
-                        sh "terraform apply -auto-approve"
-                    }
-                }
-            }
+    // stage("Create an EKS Cluster") {
+    //         steps {
+    //             script {
+    //                 dir('terraform') {
+    //                     sh "terraform init"
+    //                     sh "terraform destroy -auto-approve"
+    //                     sh "terraform init"
+    //                     sh "terraform apply -auto-approve"
+    //                 }
+    //             }
+    //         }
         }
     stage("A.CodeClone"){
       steps{
