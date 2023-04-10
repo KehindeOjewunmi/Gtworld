@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: spring-boot-k8s
-          image: kehindeojewunmi/kubernetes:latest # Image that will be used to containers in the cluster
+          image: nginx # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080 # The port that the container is running on in the cluster
+            - containerPort: 80 # The port that the container is running on in the cluster
 
 ---
 
@@ -29,6 +29,6 @@ spec:
   selector:
     app: spring-boot-k8s
   ports:
-    - port: 8080 # The port that the service is running on in the cluster
-      targetPort: 8080 # The port exposed by the service
+    - port: 80 # The port that the service is running on in the cluster
+      targetPort: 80 # The port exposed by the service
   type: LoadBalancer # type of the service.
