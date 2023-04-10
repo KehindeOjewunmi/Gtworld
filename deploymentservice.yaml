@@ -1,34 +1,42 @@
 apiVersion: apps/v1
-kind: Deployment # Kubernetes resource kind we are creating
+kind: Deployment
 metadata:
-  name: spring-boot-k8s-deployment
+  name: nginx
 spec:
   selector:
     matchLabels:
-      app: spring-boot-k8s
-  replicas: 2 # Number of replicas that will be created for this deployment
+      app: nginx
+  replicas: 1
   template:
     metadata:
       labels:
-        app: spring-boot-k8s
+        app: nginx
     spec:
       containers:
-        - name: spring-boot-k8s
-          image: nginx # Image that will be used to containers in the cluster
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80 # The port that the container is running on in the cluster
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
 
----
+------
 
-apiVersion: v1 # Kubernetes API version
-kind: Service # Kubernetes resource kind we are creating
-metadata: # Metadata of the resource kind we are creating
-  name: springboot-k8ssvc
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
 spec:
   selector:
-    app: spring-boot-k8s
-  ports:
-    - port: 80 # The port that the service is running on in the cluster
-      targetPort: 80 # The port exposed by the service
-  type: LoadBalancer # type of the service.
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+
